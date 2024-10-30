@@ -1,0 +1,266 @@
+// Дз 1 --------------------------------
+#include <iostream>
+
+int main()
+{
+    setlocale(LC_ALL, "Russian");
+
+    // 1 ЗАДАНИЕ
+    std::cout << "Оськин Владисклав Андреевич КВБО-11-24";
+
+    // 2 ЗАДАНИЕ
+
+    /*double a1;
+    double a2;
+    std::cout << "введите первое число ";
+    std::cin >> a1;
+    std::cout << "введите второе число ";
+    std::cin >> a2;
+    double x1, x2, x3, x4;
+    x1 = a1 + a2;
+    x2 = a1 - a2;
+    x3 = a1 * a2;
+    std::cout << "сложение " << x1 << "\n";
+    std::cout << "разность " << x2 << "\n";
+    std::cout << "произведение " << x3 << "\n";
+    if (a1 != 0 and a2 != 0) {
+        x4 = a1 / a2;
+        std::cout << "деление " << x4;
+    }else {
+        std::cout << "нельзя делить на 0 ";
+    }   */
+    
+    // 3 ЗАДАНИЕ
+    /*double b, c;
+    std::cout << "введите первое число ";
+    std::cin >> b;
+    std::cout << "введите второе число ";
+    std::cin >> c;
+    if (c != 0 and b != 0){
+    std::cout << -c / b;
+    }
+    else {
+        std::cout << "нет решения";
+    }*/
+
+    // 4 ЗАДАНИЕ
+    /*double a, b, c,x,x1,x2,x3,x4;
+    std::cout << "введите a ";
+    std::cin >> a;
+    std::cout << "введите b ";
+    std::cin >> b;
+    std::cout << "введите c ";
+    std::cin >> c;
+
+    x = b * b - 4 * a * c;
+    x1 = -b + sqrt(x) / 2 * a;
+    x2 = -b - sqrt(x) / 2 * a;
+    std::cout << "x1 = " << x1 << "\n" << "x2 = " << x2;*/
+
+ // 5 задание
+    /*int a, b, c;
+    std::cout << "на улице день? 1-да 0-нет ";
+    std::cin >> a;
+    std::cout << "шторы раздвинуты? 1-да 0-нет";
+    std::cin >> b;
+    std::cout << "включена лампа? 1-да 0-нет";
+    std::cin >> c;
+    if ((a == 1 and b == 1) or c == 1 ) {
+        std::cout << "в комнате светло";
+    }
+    else {
+        std::cout << "в комнате темно";
+    }*/
+
+}
+
+
+// Дз 2 --------------------------------
+
+#include <iostream> 
+#include <cmath> 
+ 
+int main() 
+{ 
+    setlocale(LC_ALL, "Russian"); 
+    double pi = 2 * acos(0.0); 
+ 
+    // ЗАДАЧА 1 
+   /* double R, h, l, r; 
+    double V, S; 
+    std::cout << "R = "; 
+    std::cin >> R; 
+    std::cout << "r = "; 
+    std::cin >> r; 
+    std::cout << "h = "; 
+    std::cin >> h; 
+    std::cout << "l = "; 
+    std::cin >> l; 
+ 
+    if (r <= 0 or R <= 0 or h <= 0 or l <= 0) { 
+        std::cout << "Ошибка"; 
+    } 
+    else { 
+        V = pi * h *(R * R + R * r + r * r)/3; 
+        std::cout << "V = "; 
+        std::cout << V; 
+        std::cout << "\n"; 
+        S = pi * (R * R + (R+r)*l + r*r); 
+        std::cout << "S = "; 
+        std::cout << S; 
+    }*/ 
+ 
+ 
+    // ЗАДАЧА 2 
+    /*double a, x; 
+    std::cout << "a = "; 
+    std::cin >> a; 
+    std::cout << "x = "; 
+    std::cin >> x; 
+    if (x == 0) { 
+        std::cout << "ошибка x == 0"; 
+    } 
+    else if (abs(x) < 1) { 
+        std::cout << a * log(abs(x)); 
+    } 
+    else if (a - pow(x, 2) < 0) { 
+        std::cout << "ошибка отрицательное число"; 
+    } 
+    else { 
+        std::cout << sqrt(a - pow(x, 2)); 
+    }*/ 
+ 
+    // ЗАДАЧА 3 
+    /*double x, y, b; 
+    std::cout << "x = "; 
+    std::cin >> x; 
+    std::cout << "y = "; 
+    std::cin >> y; 
+    std::cout << "b = "; 
+    std::cin >> b; 
+ 
+    if (b - y <= 0 or b - x < 0) { 
+        std::cout << "ОШИБКА"; 
+    } 
+    else { 
+        std::cout << "z = " << log(b - y) * sqrt(b - x); 
+    }*/ 
+ 
+    //ЗАДАЧА 4 
+ 
+    double N, s; 
+    /*std::cout << "N = \n"; 
+    std::cin >> N; 
+    if (N > 0) { 
+        for (s = 0; s <= 9; s += 1) { 
+            std::cout << N + s << "\n"; 
+        } 
+    } 
+    else { 
+        for (s = 1; s <= 10; s += 1) 
+        { 
+            std::cout << s << "\n"; 
+        } 
+    }*/ 
+ 
+    //ЗАДАЧА 5 
+    /*double x; 
+    double y; 
+ 
+    for (x = -4;  x <= 4; x += 0.5) { 
+        y = (x * x - 2 * x + 2) / (x - 1); 
+ 
+        if (x - 1 == 0) { 
+            std::cout << "Ошибка, знаминатель 0" << "\n"; 
+        } 
+        else { 
+            std::cout << "x = " << x << " y = " << y << "\n"; 
+        } 
+    }*/ 
+    return 0; 
+}
+
+// Дз 3 --------------------------------
+
+#include <iostream>
+#include <cmath>
+#include <fstream>
+#include <string.h>
+#include <algorithm>
+#include <stdlib.h>
+
+using namespace std;
+int main()
+{
+    setlocale(LC_ALL, "Russian");
+    // Задача 1
+   /* double m, S, n, p;
+    std::cout << "S = ";
+    std::cin >> S;
+    std::cout << "n = ";
+    std::cin >> n;
+    std::cout << "p = ";
+    std::cin >> p;
+
+    if (S != 0 or n != 0 or p != 0) {
+        m = (S * (p / 100) * pow(1 + (p / 100), n)) / (12 * (pow(1 + (p / 100), n) - 1));
+        std::cout << "m = ";
+        std::cout << m;
+    }
+    else {
+        std::cout << "Ошибка";
+    }*/
+
+
+    // Задача 2
+    /*double m, S, n, p;
+    std::cout << "m = ";
+    std::cin >> m;
+    std::cout << "S = ";
+    std::cin >> S;
+    std::cout << "n = ";
+    std::cin >> n;
+    double r = 0.5, old = 0, epsilon = 1e-8;
+
+    for (; abs(r - old) > epsilon;)
+    {
+        old = r;
+        r = 12 * m / S * (1 - 1 / pow(1 + old, n));
+    }
+
+    std::cout << "p = " << r * 100 << endl;*/
+
+    // Задача 3
+   /* std::ofstream File("Osk.txt");
+    File << "hiiamvladandme18yers";
+    File.close();*/
+
+    // Задача 4
+    //char readline[30];
+    //ifstream File("Osk.txt");
+    //while (File.getline(readline, 30)) {
+    //    for (int i = 0; i < strlen(readline); i++) {
+    //        if (isdigit(readline[i])) {
+    //            cout << readline[i];
+    //        }
+    //    }
+    //}
+    //File.close();
+
+    //Задача 5
+   //setlocale(0, "");
+   //string x;
+   //int i = 0;
+   //std::cout << "строка = ";
+   //std::cin >> x;
+   //for (int i = 0; i < x.length() - 1; i++) {
+   //    for (int j = i; j < x.length() - 1; j++) {
+   //        if (x[i] > x[j + 1]) {
+   //            swap(x[i], x[j + 1]);
+   //        }
+   //    }
+   //}
+   //std::cout << x;
+
+    return 0;
+}
