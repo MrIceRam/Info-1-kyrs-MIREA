@@ -264,3 +264,122 @@ int main()
 
     return 0;
 }
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+// 4.2
+
+#include <iostream>
+
+int sign(float x) {
+    if (x > 0) {
+        return 1;
+    }
+    if (x == 0) {
+        return 0;
+    }
+    if (x < 0) {
+        return -1;
+    }
+    else {
+        std::cout << "error";
+    }
+}
+
+int main()
+{
+    setlocale(LC_ALL, "Russian"); //Включает Русский язык в С++
+    double a;
+    
+    std::cout << "Введите любое число "; 
+    if (std::cin >> a) {
+        std::cout << sign(a) << "\n";
+        main();
+    }
+    else {
+        std::cout << "Error";
+        return 0;
+    }
+}
+
+// 4.3
+
+#include <iostream>
+#include <cmath>
+double pi = 2 * acos(0.0); // Создаем пи
+using namespace std;
+
+double a, b, h, r;
+double rect(double a, double b) { // прямоугольник
+	if (a <= 0 || b <= 0) {
+		return -1;
+	}
+	return a * b;
+}
+
+double trin(double a, double h) { // треугольник
+	if (a <= 0 || h <= 0) {
+		return -1;
+	}
+	return 0.5 * a * h;
+}
+
+
+double circle(double r) { // круг
+	if (r <= 0) {
+		return -1;
+	}
+	return pi * pow(r, 2);
+}
+
+int main() {
+	int select;
+	cout << "-----------------------\n";
+	cout << "1 (reactagle) / 2 (trinagle) / 3 (circle): ";
+	cin >> select;
+	switch (select) {
+	case 1: // прямоугольник
+		cout << "a = ";
+		cin >> a;
+		cout << "b = ";
+		cin >> b;
+		cout << "S reactagle = " << rect(a, b) << endl;
+		main();
+	case 2: // треугольник
+		cout << "a = ";
+		cin >> a;
+		cout << "h = ";
+		cin >> h;
+		cout << "S trinagle = " << trin(a, h) << endl;
+		main();
+	case 3: // круг
+		cout << "r = ";
+		cin >> r;
+		cout << "S circle = " << circle(r) << endl;
+		main();
+	}
+}
+
+//4.4
+
+#include <iostream>
+
+int main() {
+    for (int i = 0; i < 8; i++) { // 8 верхних полос и 48 звёзд
+        std::cout << " * * * * * *";
+        std::cout << "________________________________" << "\n";
+    }
+    for (int i = 0; i < 5; i++) { // 5 нижних полос
+        std::cout << "____________________________________________" << "\n";
+    }
+    return 0;
+}
