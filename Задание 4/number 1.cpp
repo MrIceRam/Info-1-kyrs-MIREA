@@ -5,7 +5,6 @@
 int main() 
 { 
     setlocale(LC_ALL, "Russian"); // Включает Русский язык в С++
-    srand(time(NULL));
 	std::ofstream file;
 	file.open("num4-1.txt");
 

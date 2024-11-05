@@ -1,6 +1,7 @@
 #include <iostream> 
 #include <cmath>
-int main{
+int main(){
+    
     double a, x; 
     std::cout << "a = "; 
     std::cin >> a; 
