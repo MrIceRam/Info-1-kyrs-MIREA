@@ -3,90 +3,83 @@ using namespace std;
 
 int main()
 {
-    double matrix_a[3][4] = { // 3x4
+    setlocale(0, "");
+    // set matrix
+    const int matrix_a_len_x = 4, matrix_a_len_y = 3, matrix_b_len_x = 2, matrix_b_len_y = 4;
+    double matrix_a[matrix_a_len_y][matrix_a_len_x] = {
         {5, 2, 0, 10},
         {3, 5, 2, 5},
-        {20, 0, 0, 0}};
-                
-    double matrix_b[4][2] = { // 4x2
+        {20, 0, 0, 0} };
+    double matrix_b[matrix_b_len_y][matrix_b_len_x] = {
         {1.20, 0.50},
         {2.80, 0.40},
         {5.00, 1.00},
-        {2.00, 1.50}};
-        
-    double matrix_c[3][2]; // 3x2
-
-    for (int x = 0; x < 3; x++) {
-        for (int y = 0; y < 2; y++) {
-            for (int i = 0; i < 4; i++) {
-                matrix_c[x][y] += matrix_a[x][i] * matrix_b[i][y];
+        {2.00, 1.50} };
+    double matrix_c[matrix_a_len_y][matrix_b_len_x];
+    // matrix multiplication
+    for (int y = 0; y < matrix_a_len_y; y++) {
+        for (int x = 0; x < matrix_b_len_x; x++) {
+            matrix_c[y][x] = 0;
+            for (int i = 0; i < matrix_b_len_y; i++) {
+                matrix_c[y][x] += matrix_a[y][i] * matrix_b[i][x];
             }
         }
     }
 
-    // Вывод матрицы C
-    for (int x = 0; x < 3; x++) {
-        for (int y = 0; y < 2; y++) {
-            cout << matrix_c[x][y] << "               ";
+    // Вывод полученной матрицы
+    for (int y = 0; y < matrix_a_len_y; y++) {
+        for (int x = 0; x < matrix_b_len_x; x++) {
+            cout << matrix_c[y][x] << "   ";
         }
         cout << endl;
     }
-    cout << "------------------------------\n";
-    
-	//////////////////////////////////////////////////////// Деньги
-    int maxSeller = 0;
-	int minSeller = 0;
-    double maxMoney = 0;
-	double minMoney = 10000000;
-    for (int x = 0; x < 3; x++) {
-        if (matrix_c[x][0] > maxMoney) {
-			maxSeller = x + 1;
-			maxMoney = matrix_c[x][0];
-		}
-        if (matrix_c[x][0] < minMoney) {
-			minSeller = x + 1;
-			minMoney = matrix_c[x][0]; 
-		}
+    // Задание 1
+    for (int i = 0; i < 25; i++) cout << "*";
+    cout << endl << "Задание 1: " << endl;
+    int max_seller, min_seller;
+    double maxim = 0, minim = 10000000;
+    for (int i = 0; i < matrix_a_len_y; i++) {
+        if (maxim < matrix_c[i][0]) { max_seller = i + 1; maxim = matrix_c[i][0]; }
+        if (minim > matrix_c[i][0]) { min_seller = i + 1; minim = matrix_c[i][0]; }
     }
-    cout << "Seller " << maxSeller << " MaxMoney: " << maxMoney << endl;
-    cout << "Seller " << minSeller << " MinMoney: " << minMoney << endl;
-    
-	//////////////////////////////////////////////////////// Комиссионные
-    maxSeller = 0;
-	minSeller = 0;
-    double maxComss = 0;
-	double minComss = 10000000;
-    for (int x = 0; x < 3; x++) {
-        if (matrix_c[x][1] > maxComss) {
-			maxSeller = x + 1;
-			maxComss = matrix_c[x][1]; 
-		}
-        if (matrix_c[x][1] < minComss) {
-			minSeller = x + 1;
-			minComss = matrix_c[x][1]; 
-		}
+    cout << "Продавец " << max_seller << " выручил больше всего денег. Их сумма равна " << maxim << endl;
+    cout << "Продавец " << min_seller << " выручил меньше всего денег. Их сумма равна " << minim << endl;
+
+    // Задание 2
+    for (int i = 0; i < 25; i++) cout << "*";
+    cout << endl << "Задание 2(Коммисионные): " << endl;
+
+    max_seller = 0; min_seller = 0;
+    maxim = 0, minim = 10000000;
+    for (int i = 0; i < matrix_a_len_y; i++) {
+        if (maxim < matrix_c[i][1]) { max_seller = i + 1; maxim = matrix_c[i][1]; }
+        if (minim > matrix_c[i][1]) { min_seller = i + 1; minim = matrix_c[i][1]; }
     }
-    cout << "Seller " << maxSeller << " MaxComss " << maxComss << endl;
-    cout << "Seller " << minSeller << " MinComss " << minComss << endl;
+    cout << "Продавец " << max_seller << " получил больше всего комиссионных, они равны " << maxim << endl;
+    cout << "Продавец " << min_seller << " получил меньше всего комиссионных, они равны " << minim << endl;
 
-	//////////////////////////////////////////////////////// Общая сумма денег
-    double sumMoney = 0;
-    for (int x = 0; x < 3; x++) {
-    	sumMoney += matrix_c[x][0];
-	}
-    cout << "SumMoney = " << sumMoney << endl;
-    
-	/////////////////////////////////////////////////////// Общая сумма комиссионных
-    double sumComss = 0;
-    for (int x = 0; x < 3; x++) {
-    	sumComss += matrix_c[x][1];
-	}
-    cout << "SumComss = " << sumComss << endl;
+    // Задание 3
+    for (int i = 0; i < 25; i++) cout << "*";
+    cout << endl << "Задание 3: " << endl;
 
-	/////////////////////////////////////////////////////// Общая сумма денег (+ комиссионные)
-    double SumMoneyResult = 0;
-    for (int x = 0; x < 3; x++) {
-    	SumMoneyResult += matrix_c[x][0] + matrix_c[x][1];
-	}
-    cout << "SumMoneyResult = " << SumMoneyResult << endl;
+    double sum = 0;
+    for (int i = 0; i < matrix_a_len_y; i++) sum += matrix_c[i][0] - matrix_c[i][1];
+    cout << "Сумма денег вырученных за товары = " << sum << endl;
+
+    // Задание 4
+    for (int i = 0; i < 25; i++) cout << "*";
+    cout << endl << "Задание 4: " << endl;
+
+    sum = 0;
+    for (int i = 0; i < matrix_a_len_y; i++) sum += matrix_c[i][1];
+    cout << "Сумма коммисионных = " << sum << endl;
+
+    // Задание 5
+    for (int i = 0; i < 25; i++) cout << "*";
+    cout << endl << "Задание 4: " << endl;
+
+    sum = 0;
+    for (int i = 0; i < matrix_a_len_y; i++) sum += matrix_c[i][0] + matrix_c[i][1];
+    cout << "Сумма прошедших через руки денег = " << sum << endl;
+
 }

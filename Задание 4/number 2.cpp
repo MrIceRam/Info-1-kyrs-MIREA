@@ -8,7 +8,7 @@ int sign(int x) {
         return 0;
     }
     if (x < 0) {
-        return -2;
+        return -1;
     }
 }
 
@@ -16,8 +16,8 @@ int main()
 {
     setlocale(LC_ALL, "Russian"); //Включает Русский язык в С++
     double a;
-    
-    std::cout << "Введите любое число "; 
+
+    std::cout << "Введите любое число ";
     if (std::cin >> a) {
         std::cout << sign(a) << "\n";
         main();
