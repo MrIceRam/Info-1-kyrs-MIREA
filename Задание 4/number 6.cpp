@@ -15,7 +15,7 @@ int rim(char x) { // римские числа в арабские
 
 int match(std::string num, int minus) {
     int x{}, a;
-    int i = num.length() - 1;
+    int i = num.length();
     for (i; i >= 0; i--) {
         if (rim(num[i]) >= 1) {
             x += rim(num[i]);

@@ -7,10 +7,11 @@ int main()
     setlocale(LC_ALL, "Russian"); // Включает Русский язык в С++
 	std::ofstream file;
 	file.open("num4-1.txt");
-
+	double a;
 	for (int i = 0; i < 10; i++) // Запись в файл 10 чисел
-	{
-		file << i << std::endl;
+	{	
+		std::cin >> a;
+		file << a << std::endl;
 	}
 	file.close();
 

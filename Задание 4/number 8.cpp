@@ -38,8 +38,8 @@ int main()
         if (maxim < matrix_c[i][0]) { max_seller = i + 1; maxim = matrix_c[i][0]; }
         if (minim > matrix_c[i][0]) { min_seller = i + 1; minim = matrix_c[i][0]; }
     }
-    std::cout << "Продавец " << max_seller << " выручил больше всего денег. Их сумма равна " << maxim << std::endl;
-    std::cout << "Продавец " << min_seller << " выручил меньше всего денег. Их сумма равна " << minim << std::endl;
+    std::cout << "Продавец " << max_seller << " выручил больше " << maxim << std::endl;
+    std::cout << "Продавец " << min_seller << " выручил меньше " << minim << std::endl;
 
     // Задание 2
     std::cout << "----------------------";
@@ -50,15 +50,15 @@ int main()
         if (maxim < matrix_c[i][1]) { max_seller = i + 1; maxim = matrix_c[i][1]; }
         if (minim > matrix_c[i][1]) { min_seller = i + 1; minim = matrix_c[i][1]; }
     }
-    std::cout << "Продавец " << max_seller << " получил больше всего комиссионных, они равны " << maxim << std::endl;
-    std::cout << "Продавец " << min_seller << " получил меньше всего комиссионных, они равны " << minim << std::endl;
+    std::cout << "Продавец " << max_seller << " получил больше комиссионных " << maxim << std::endl;
+    std::cout << "Продавец " << min_seller << " получил меньше комиссионных " << minim << std::endl;
 
     // Задание 3
     std::cout << "----------------------";
     std::cout << std::endl << "Задание 3: " << std::endl;
     double sum = 0;
     for (int i = 0; i < 3; i++) sum += matrix_c[i][0] - matrix_c[i][1];
-    std::cout << "Сумма денег вырученных за товары " << sum << std::endl;
+    std::cout << "Сумма вырученных товаров " << sum << std::endl;
 
     // Задание 4
     std::cout << "----------------------";

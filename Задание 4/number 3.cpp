@@ -30,7 +30,6 @@ double circle(double r) { // круг
 int main() {
 	setlocale(LC_ALL, "Russian"); //Включает Русский язык в С++
 	int select;
-    cout << "-----------------\n";
 	cout << "1 прямоугольник" << "\n" << "2 треугольник" << "\n" << "3 круг" << "\n" << "Выбор = ";
 	cin >> select;
 	switch (select) {

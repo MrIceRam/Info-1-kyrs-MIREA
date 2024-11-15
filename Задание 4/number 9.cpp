@@ -1,7 +1,6 @@
 #include <iostream>
 #include <string>
 #include <cmath>
-using namespace std;
 
 
 int char_to_int(char symbol) {
@@ -27,7 +26,7 @@ int char_to_int(char symbol) {
 }
 
 
-string int_to_char(int symbol) {
+std::string int_to_char(int symbol) {
 	switch (symbol) {
 	case 0: return "0"; break;
 	case 1: return "1"; break;
@@ -50,7 +49,7 @@ string int_to_char(int symbol) {
 }
 
 
-double funTenCC(string line, int base_num = 2) { // перевод в 10 с.с.
+double funTenCC(std::string line, int base_num = 2) { // перевод в 10 с.с.
 	double new_x = 0; // полученное число в 10 с.с.
 	
 	for (int i = 0; i < line.size(); i++) { // пробегание по всем цифрам
@@ -62,8 +61,8 @@ double funTenCC(string line, int base_num = 2) { // перевод в 10 с.с.
 }
 
 
-string funNewCC(int num, int base_num = 2) { // перевод в нужную с.с.
-	string new_x = int_to_char(num % base_num);
+std::string funNewCC(int num, int base_num = 2) { // перевод в нужную с.с.
+	std::string new_x = int_to_char(num % base_num);
 	
 	if (num > 0) {
 		return funNewCC(num / base_num) + new_x; 
@@ -76,17 +75,17 @@ string funNewCC(int num, int base_num = 2) { // перевод в нужную �
 
 int main()
 {
-	string x;
+	std::string x;
 	int old_ss, new_ss;
-	cout << "Number: ";
-	cin >> x;
-	cout << "Old CC: ";
-	cin >> old_ss;
-	cout << "New CC: ";
-	cin >> new_ss;
+	std::cout << "Number: ";
+	std::cin >> x;
+	std::cout << "Old CC: ";
+	std::cin >> old_ss;
+	std::cout << "New CC: ";
+	std::cin >> new_ss;
 	
 	int num = funTenCC(x, old_ss);
-	cout << "Number: " << num << endl;
-	cout << "Number: " << funNewCC(num, new_ss)  << endl;
+	std::cout << "Number: " << num << std::endl;
+	std::cout << "Number: " << funNewCC(num, new_ss) << std::endl;
     return 0;
 }
