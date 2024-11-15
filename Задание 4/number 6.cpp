@@ -14,7 +14,7 @@ int Number(char ch){
         case 'V': return 5;
         case 'I': return 1;
     }
-    cerr << "none correct input" << endl;
+    cout << "none correct input\n";
 }
 
 int Decode(string input){
