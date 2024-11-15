@@ -2,8 +2,6 @@
 #include <vector>
 using namespace std;
 
-//Автоматный распознаватель
-
 int Number(char ch){
     switch(ch){
         case 'M': return 1000;
@@ -14,7 +12,7 @@ int Number(char ch){
         case 'V': return 5;
         case 'I': return 1;
     }
-    cout << "none correct input\n";
+    return 0;
 }
 
 int Decode(string input){
