@@ -1,46 +1,45 @@
 #include <iostream>
+#include <vector>
+using namespace std;
 
-int rim(char x) { // римские числа в арабские
-    switch (x) {
-    case 'I': return 1;
-    case 'V': return 5;
-    case 'X': return 10;
-    case 'L': return 50;
-    case 'C': return 100;
-    case 'D': return 500;
-    case 'M': return 1000;
+//Автоматный распознаватель
+
+int Number(char ch){
+    switch(ch){
+        case 'M': return 1000;
+        case 'D': return 500;
+        case 'C': return 100;
+        case 'L': return 50;
+        case 'X': return 10;
+        case 'V': return 5;
+        case 'I': return 1;
     }
-    return 0;
+    cerr << "none correct input" << endl;
 }
 
-int match(std::string num, int minus) {
-    int x{}, a;
-    int i = num.length();
-    for (i; i >= 0; i--) {
-        if (rim(num[i]) >= 1) {
-            x += rim(num[i]);
-        }
-        else{
-            x -= rim(num[i]);
-        }
-        a = rim(num[i]);
+int Decode(string input){
+    int result;
+    vector <int> num;
+
+    for(char ch: input){
+        num.push_back(Number(ch));
     }
-    x = x * minus;
-    return x;
+
+    result = num[num.size()-1];
     
+    for(int i = input.length()-2;i>=0;i--){
+        if(num[i] >= num[i+1]) result += num[i];
+        else result -= num[i];
+    }
+
+    return result;
 }
 
-
-int main() {
-    std::string num;
-    int minus;
-    std::cout << "Number = "; std::cin >> num; std::cout << "\n";
-    if (num[0] == '-') {
-        minus = -1;
-    }
-    else {
-        minus = 1;
-    }
-    std::cout << match(num, minus) << "\n";
+int main(){
+    string input;
+    cout << "Number: ";
+    cin >> input;
+    
+    cout << Decode(input) << endl;
     main();
 }
