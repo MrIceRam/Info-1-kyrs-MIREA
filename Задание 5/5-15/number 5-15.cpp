@@ -6,11 +6,11 @@
 std::string convertCC(int num, int cc) {
     std::string converted = "";
     while (num > 0) {
-        int remainder = num % cc;
-        if (remainder < 10) {
-            converted = char(remainder + '0') + converted;
+        int i = num % cc;
+        if (i < 10) {
+            converted = char(i + '0') + converted;
         } else {
-            converted = char(remainder + 'A' - 10) + converted;
+            converted = char(i + 'A' - 10) + converted;
         }
         num /= cc;
     }
