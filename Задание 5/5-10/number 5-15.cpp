@@ -3,16 +3,16 @@
 #include <vector>
 
 // Функция для перевода числа из десятичной системы счисления в любую другую
-std::string convertToBase(int num, int base) {
+std::string convertCC(int num, int cc) {
     std::string converted = "";
     while (num > 0) {
-        int remainder = num % base;
+        int remainder = num % cc;
         if (remainder < 10) {
             converted = char(remainder + '0') + converted;
         } else {
             converted = char(remainder + 'A' - 10) + converted;
         }
-        num /= base;
+        num /= cc;
     }
     return converted;
 }
@@ -23,31 +23,30 @@ int main() {
     std::cin >> N;
 
     // Считываем вещественные числа и записываем их в файл
-    std::ofstream outputFile("input.txt");
+    std::ofstream File("input.txt");
     for (int i = 0; i < N; i++) {
         double num;
-        std::cout << "Введите вещественное число: ";
+        std::cout << "Введите число: ";
         std::cin >> num;
-        outputFile << num << std::endl;
+        File << num << std::endl;
     }
-    outputFile.close();
+    File.close();
 
     // Читаем вещественные числа из файла и переводим их в другую систему счисления
-    std::ifstream inputFile("input.txt");
-    std::ofstream outputConvertedFile("converted.txt");
+    std::ifstream File2("input.txt");
+    std::ofstream x("converted.txt");
     double num;
-    while (inputFile >> num) {
-        int base;
-        std::cout << "Введите основание системы счисления (от 2 до 9) для числа "
-                  << num << ": ";
-        std::cin >> base;
-        std::string convertedNum = convertToBase(num, base);
-        outputConvertedFile << convertedNum << std::endl;
+    while (File2 >> num) {
+        int cc;
+        std::cout << "Введите сс (от 2 до 9) для числа " << num << ": ";
+        std::cin >> cc;
+        std::string ccNum = convertCC(num, cc);
+        x << ccNum << std::endl;
     }
-    inputFile.close();
-    outputConvertedFile.close();
+    File2.close();
+    x.close();
 
-    std::cout << "Числа успешно сконвертированы и записаны в файл converted.txt\n";
+    std::cout << "Числа сконвертированые числа в файл converted.txt\n";
 
     return 0;
 }
