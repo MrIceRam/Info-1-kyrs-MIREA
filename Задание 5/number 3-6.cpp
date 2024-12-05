@@ -7,9 +7,11 @@ int main() {
     std::ifstream file("txt.txt"); // открываем файл для чтения
     std::string longestWord;
     std::string word;
-
+    int x = 99;
+    
     while (file >> word) {
-        if (word.length() > longestWord.length()) {
+        if (word.length() < x) {
+            x = word.length();
             longestWord = word;
         }
     }
