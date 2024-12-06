@@ -16,6 +16,6 @@ int main() {
         }
     }
     file.close();
-    std::cout << "самое длинное слово: " << longestWord << std::endl;
+    std::cout << "самое короткое слово: " << longestWord << std::endl;
     return 0;
 }
