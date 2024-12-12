@@ -1,5 +1,5 @@
 #include <iostream>// cout, cin
-#include <algorithm>//next_permutation
+#include <algorithm>//next_permutation. Находим наибольший индекс i
 #include <string> // Для работы со строками
 
 bool TrueOrFalse(int* x, int n) // Создаем функцию, которая будет возвращать тип bool
