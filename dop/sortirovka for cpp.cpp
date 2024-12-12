@@ -1,10 +1,9 @@
 #include <iostream>
 
-void quadraticSort(int arr[], int n) {
+void sortirovka(int arr[], int n) {
     for (int i = 0; i < n; i++) {
         for (int j = i + 1; j < n; j++) {
             if (arr[i] > arr[j]) {
-                // Swap arr[i] and arr[j]
                 int temp = arr[i];
                 arr[i] = arr[j];
                 arr[j] = temp;
@@ -15,16 +14,16 @@ void quadraticSort(int arr[], int n) {
 
 int main() {
     int n;
-    std::cout << "Enter the number of elements in the array: ";
+    std::cout << "Колличество элементов: ";
     std::cin >> n;
 
     int arr[n];
-    std::cout << "Enter the elements of the array:" << std::endl;
+    std::cout << "Теперь сами элементы:" << std::endl;
     for (int i = 0; i < n; i++) {
         std::cin >> arr[i];
     }
 
-    quadraticSort(arr, n);
+    sortirovka(arr, n);
 
     std::cout << "Sorted array:" << std::endl;
     for (int i = 0; i < n; i++) {
@@ -32,5 +31,4 @@ int main() {
     }
     std::cout << std::endl;
 
-    return 0;
 }
