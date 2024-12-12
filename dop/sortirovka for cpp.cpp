@@ -25,7 +25,7 @@ int main() {
 
     sortirovka(arr, n);
 
-    std::cout << "Sorted array:" << std::endl;
+    std::cout << "Отсортированный массив:" << std::endl;
     for (int i = 0; i < n; i++) {
         std::cout << arr[i] << " ";
     }
