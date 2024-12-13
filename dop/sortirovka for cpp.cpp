@@ -1,3 +1,5 @@
+// 36. Квадратичная сортировка
+
 #include <iostream>
 
 void sortirovka(int arr[], int n) {
@@ -13,6 +15,7 @@ void sortirovka(int arr[], int n) {
 }
 
 int main() {
+    setlocale(LC_ALL, "Russian"); //Включает Русский язык в С++
     int n;
     std::cout << "Колличество элементов: ";
     std::cin >> n;

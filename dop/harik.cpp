@@ -1,4 +1,4 @@
-#include <iostream>// cout, cin
+#include <iostream>
 #include <algorithm>//next_permutation. Находим наибольший индекс i
 #include <string> // Для работы со строками
 
@@ -22,7 +22,7 @@ int main()
     {
         std::next_permutation(x, x + n); // Находим наибольший индекс i, для которого элементы массива равны
         if (TrueOrFalse(x, n)) // И применяем нашу функцию
-            ih++; // Прибавляем к счетчику + 1
+            ih = ih + 1; // Прибавляем к счетчику + 1
     }
     std::cout << "Количество вариантов: " << ih; // Выводим количество перестановок
 }
